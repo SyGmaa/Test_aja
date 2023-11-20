@@ -1,0 +1,115 @@
+.navatas {
+    overflow: hidden;
+    background-color: #f9cdcd;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 4px 2px -2px rgba(0, 0, 0, .2);
+}
+
+.navatas a {
+    float: left;
+    color: #000000;
+    text-align: center;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.navatas a:hover {
+    background-color: #e8b5b5;
+    color: black;
+}
+
+.navatas a.split {
+    float: right;
+    color: rgb(0, 0, 0);
+}
+
+.navatas i {
+    color: #f6ebeb;
+    margin-right: 2px;
+}
+
+i {
+    color: #a18080;
+    cursor: pointer;
+}
+
+i:hover {
+    color: #f0dddd;
+}
+
+.chip {
+    display: inline-block;
+    padding: 0 25px;
+    height: 50px;
+    font-size: 16px;
+    line-height: 50px;
+    border-radius: 25px;
+    background-color: #e8b5b5;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.chip img {
+    float: left;
+    margin: 0 10px 0 -25px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.chip a {
+    text-decoration: none;
+    color: #000000;
+    text-align: center;
+}
+
+.chip a:hover {
+    background-color: #e8b5b5;
+    color: rgb(255, 255, 255);
+}
+
+.col-6 a:hover {
+    background-color: #e8b5b5;
+    color: rgb(255, 255, 255);
+}
+
+
+/* kirim pesan */
+
+input[type=text],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical
+}
+
+input[type=submit] {
+    background-color: #f9cdcd;
+    color: rgb(0, 0, 0);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #e8b5b5;
+}
+
+a {
+    color: #000000;
+}
+
+a:hover {
+    color: rgb(255, 255, 255);
+}

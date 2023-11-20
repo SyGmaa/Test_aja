@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .gradient-custom {
+            /* fallback for old browsers */
+            background: #f6d365;
+            
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: -webkit-linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1));
+            
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1))
+          }  
+
+          * {box-sizing: border-box;}
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+.open-button {
+  background-color: #e8b5b5;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #147753;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: rgb(208, 73, 73);
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+.glow {
+    font-size: 50px;
+    color: #fff;
+    text-align: center;
+    animation: glow 1s ease-in-out infinite alternate;
+  }
+  
+  @-webkit-keyframes glow {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    }
+    
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+  }
+    </style>
+</head>
+<body>
+    
+    <section class="vh-100" style="background-color: #f4f5f7;">
+        <div class="container py-5 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col col-lg-6 mb-4 mb-lg-0">
+              <div class="card mb-3" style="border-radius: .5rem;">
+                <div class="row g-0">
+                  <div class="col-md-4 gradient-custom text-center text-white"
+                    style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
+                      alt="Avatar" class="img-fluid my-5" style="width: 80px;" />
+                    <h5>Marie Horwitz</h5>
+                    <p>Web Designer</p>
+                    <i class="far fa-edit mb-5"></i>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body p-4">
+                      <h6>Information</h6>
+                      <hr class="mt-0 mb-4">
+                      <div class="row pt-1">
+                        <div class="col-6 mb-3">
+                          <h6>Email</h6>
+                          <p class="text-muted">info@example.com</p>
+                        </div>
+                        <div class="col-6 mb-3">
+                          <h6>Phone</h6>
+                          <p class="text-muted">123 456 789</p>
+                        </div>
+                      </div>
+                      <h6>Projects</h6>
+                      <hr class="mt-0 mb-4">
+                      <div class="row pt-1">
+                        <div class="col-6 mb-3">
+                          <h6>Recent</h6>
+                          <p class="text-muted">Lorem ipsum</p>
+                        </div>
+                        <div class="col-6 mb-3">
+                          <h6>Most Viewed</h6>
+                          <p class="text-muted">Dolor sit amet</p>
+                        </div>
+                      </div>
+                      <div class="d-flex justify-content-start">
+                        <a href="#!"><i class="fab fa-facebook-f fa-lg me-3"></i></a>
+                        <a href="#!"><i class="fab fa-twitter fa-lg me-3"></i></a>
+                        <a href="#!"><i class="fab fa-instagram fa-lg"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col col-lg-6 mb-4 mb-lg-0">
+              <div class="card mb-3" style="border-radius: .5rem;">
+                <div class="row g-0">
+                  <div class="col-md-4 gradient-custom text-center text-white"
+                    style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
+                      alt="Avatar" class="img-fluid my-5" style="width: 80px;" />
+                    <h5>Marie Horwitz</h5>
+                    <p>Web Designer</p>
+                    <i class="far fa-edit mb-5"></i>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body p-4">
+                      <h6>Information</h6>
+                      <hr class="mt-0 mb-4">
+                      <div class="row pt-1">
+                        <div class="col-6 mb-3">
+                          <h6>Email</h6>
+                          <p class="text-muted">info@example.com</p>
+                        </div>
+                        <div class="col-6 mb-3">
+                          <h6>Phone</h6>
+                          <p class="text-muted">123 456 789</p>
+                        </div>
+                      </div>
+                      <h6>Projects</h6>
+                      <hr class="mt-0 mb-4">
+                      <div class="row pt-1">
+                        <div class="col-6 mb-3">
+                          <h6>Recent</h6>
+                          <p class="text-muted">Lorem ipsum</p>
+                        </div>
+                        <div class="col-6 mb-3">
+                          <h6>Most Viewed</h6>
+                          <p class="text-muted">Dolor sit amet</p>
+                        </div>
+                      </div>
+                      <div class="d-flex justify-content-start">
+                        <a href="#!"><i class="fab fa-facebook-f fa-lg me-3"></i></a>
+                        <a href="#!"><i class="fab fa-twitter fa-lg me-3"></i></a>
+                        <a href="#!"><i class="fab fa-instagram fa-lg"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col col-lg-6 mb-4 mb-lg-0">
+              <div class="card mb-3" style="border-radius: .5rem;">
+                <div class="row g-0">
+                  <div class="col-md-4 gradient-custom text-center text-white"
+                    style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
+                      alt="Avatar" class="img-fluid my-5" style="width: 80px;" />
+                    <h5>Marie Horwitz</h5>
+                    <p>Web Designer</p>
+                    <i class="far fa-edit mb-5"></i>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body p-4">
+                      <h6>Information</h6>
+                      <hr class="mt-0 mb-4">
+                      <div class="row pt-1">
+                        <div class="col-6 mb-3">
+                          <h6>Email</h6>
+                          <p class="text-muted">info@example.com</p>
+                        </div>
+                        <div class="col-6 mb-3">
+                          <h6>Phone</h6>
+                          <p class="text-muted">123 456 789</p>
+                        </div>
+                      </div>
+                      <h6>Projects</h6>
+                      <hr class="mt-0 mb-4">
+                      <div class="row pt-1">
+                        <div class="col-6 mb-3">
+                          <h6>Recent</h6>
+                          <p class="text-muted">Lorem ipsum</p>
+                        </div>
+                        <div class="col-6 mb-3">
+                          <h6>Most Viewed</h6>
+                          <p class="text-muted">Dolor sit amet</p>
+                        </div>
+                      </div>
+                      <div class="d-flex justify-content-start">
+                        <a href="#!"><i class="fab fa-facebook-f fa-lg me-3"></i></a>
+                        <a href="#!"><i class="fab fa-twitter fa-lg me-3"></i></a>
+                        <a href="#!"><i class="fab fa-instagram fa-lg"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="row">
+        <div class="col-4 offset-2" style="position:absolute;top: 250px;">
+            <h1 class="glow text-center" style="color:rgb(245, 245, 245)">Gabut Server</h1>
+        </div>
+    </div>
+
+
+      <button class="open-button" onclick="openForm()">Open Form</button>
+
+<div class="form-popup" id="myForm">
+  <form action="/action_page.php" class="form-container">
+    <h1>Login</h1>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
+    <button type="submit" class="btn">Login</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
+</body>
+</html>
